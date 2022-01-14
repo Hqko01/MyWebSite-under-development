@@ -1,0 +1,246 @@
+@import 'https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2pc;
+}
+
+body {
+    height: 100vh;
+    background-color: #343a40;
+    color: #ced4da;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+.main .header {
+    width: 100%;
+    height: 40%;
+    background-image: url("https://i.picsum.photos/id/577/1000/1000.jpg?hmac=QD4pdTTAIu1Hcmn6ZwhWVlXRkCIBqJqQxlKsLs8KMjo");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transition: .7s;
+    animation: alivebg .7s linear;
+}
+
+@keyframes alivebg {
+    0% {
+        background-size: 200%;
+    }
+}
+
+.main .header.sticky {
+    height: 0;
+}
+
+.main .header-menu {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 5px #212529;
+    background-image: url("https://i.picsum.photos/id/974/1200/300.jpg?hmac=VbaDygfRR6kUl2ZCHwlesCAjINTEHyZ67pbZxY1nYaA");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    z-index: 200;
+    transition: 1s;
+}
+
+.main.sticky .header-menu {
+    background-image: url("https://i.picsum.photos/id/577/1000/1000.jpg?hmac=QD4pdTTAIu1Hcmn6ZwhWVlXRkCIBqJqQxlKsLs8KMjo");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main .header-menu .filter {
+    position: absolute;
+    z-index: -5;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: brightness(60%);
+}
+
+.main .header-menu h1 {
+    position: relative;
+    left: 5%;
+    color: #ced4da;
+    animation: alive .6s linear;
+    font-size: xx-large;
+}
+
+@keyframes alive {
+    0% {
+        left: -20%;
+    }
+
+    100% {
+        left: 5%;
+    }
+}
+
+.main .header-menu .icons {
+    position: absolute;
+    right: 5%;
+    display: flex;
+    animation: icons .6s linear;
+    overflow: hidden;
+}
+
+@keyframes icons {
+    0% {
+        right: -30%;
+    }
+
+    100% {
+        right: 5%;
+    }
+}
+
+.main .header-menu .icons i {
+    font-size: 35px;
+    margin: 20px;
+    color: #ced4da;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .4s;
+}
+
+.main .header-menu .icons i:hover {
+    margin-top: 10px;
+}
+
+.main .header-menu .icons i:hover span {
+    opacity: 1;
+    visibility: visible;
+    bottom: 10%;
+}
+
+.main .header-menu .icons span {
+    position: absolute;
+    bottom: -15%;
+    opacity: 0;
+    visibility: hidden;
+    transition: .6s;
+}
+
+.main .mid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 50px;
+    text-align: justify;
+}
+
+.main .mid .content {
+    width: 70%;
+    padding: 200px 50px 50px 50px;
+    opacity: 1;
+    visibility: visible;
+    animation: aliveContent 1s linear;
+}
+
+.main .mid .content-2 {
+    position: relative;
+    width: 30%;
+    margin: 200px 50px 50px 10px;
+    background-image: url("https://p4.wallpaperbetter.com/wallpaper/591/885/89/8k-nasa-pluto-4k-wallpaper-preview.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    animation: aliveContent 1s linear;
+    opacity: 1;
+    visibility: visible;
+    transition: .7s;
+    box-shadow: 0 0 15px black;
+}
+
+.main .mid .content-2 span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    backdrop-filter: brightness(20%);
+}
+
+.main .mid .content-2 .result {
+    position: relative;
+    margin: 30px;
+}
+
+@keyframes aliveContent {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.main .bottom {
+    width: 100%;
+    height: 50%;
+    background-color: #3586ff;
+}   
+
+.main .bottom .wave {
+    width: 100%;
+    height: 100px;
+    background: #343a40 url("https://cdn.discordapp.com/attachments/433202242749726730/911696830616698960/wave.png");
+    background-size: 1000px 100px;
+    animation: animateWave 4s linear infinite;
+
+}
+
+@keyframes animateWave {
+    0% {
+        background-position-x: 1000px;
+    }
+
+    100% {
+        background-position-x: 0;
+    }
+}
+
+.Radios {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.Radios input[type="radio"] {
+    margin: 3px;
+}
+
+/*-------------Mobile--------------*/
+
+@media screen and (max-width: 1000px) {
+   .main .mid {
+       flex-direction: column;
+   }
+
+   .main .header-menu .icons {
+       display: none;
+   }
+
+   .main .mid .content {
+       width: 100%;
+   }
+
+   .main .mid .content-2 {
+       width: 90%;
+       height: 500px;
+   }
+}
